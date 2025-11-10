@@ -73,15 +73,31 @@ public class TestPicture17
     pixels[500034].setColor(Color.blue);
 
     ferris1.explore();
-/*
+/**/
    // loop to access indexes of array or collection
 
     //for each loop spot  is a ?
-    for (Pixel spot : pixels)
-    System.out.println( spot );
+    /*
+    int red;
+    for (Pixel spot1 : pixels)
+    {
+        //System.out.println( spot1 );
+        red = spot1.getRed();
+        red = (int)(red * 0.25);
+        spot1.setRed(red);
+    }
 
-
+*/
+int blue;
+int count = 0;
+for (Pixel spot1: pixels)
+{
+    if (count % 20 == 0)
+    spot1.setColor(Color.yellow);
+    count ++;
+}
    
+ferris1.explore();
  /**/
 
  /**
