@@ -67,7 +67,7 @@ public class TestPicture17
     //spot.setColor(ltsteel);
     
     ferris1.explore();
-/*
+
     pixels[17].setColor(Color.blue);
     spot.setColor(new Color(252,252,252));
     pixels[500034].setColor(Color.blue);
@@ -144,7 +144,7 @@ final double  FACTOR = .5;
 
   /**/ 
     //write/save a picture as a file
-    ferris1.write("images/ferris11.jpg");
+    ferris1.write("images/SFTry1.jpg");
 
     /**/
   }//main

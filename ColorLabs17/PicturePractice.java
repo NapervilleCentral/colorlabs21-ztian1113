@@ -56,7 +56,64 @@ public class PicturePractice
             blue4 = spot1.getBlue();
             green4 = spot1.getGreen();
             grey = (red4 + blue4 + green4)/3;
+            spot1.setRed(grey);
+            spot1.setBlue(grey);
+            spot1.setGreen(grey);
         }
         kitten4.explore();
+        
+        //lighten
+        int red5, blue5, green5;
+        Pixel[] pixels5 = kitten5.getPixels();
+        for (Pixel spot1: pixels5)
+        {
+            red5 = spot1.getRed();
+            red5 = (int)(red5 + 50);
+            spot1.setRed(red5);
+            blue5 = spot1.getBlue();
+            blue5 = (int)(blue5 + 50);
+            spot1.setBlue(blue5);
+            green5 = spot1.getGreen();
+            green5 = (int)(green5 + 50);
+            spot1.setGreen(green5);
+        }
+        kitten5.explore();
+        
+        //change pixel
+        int red6, blue6, green6;
+        Pixel[] pixels6 = kitten6.getPixels();
+        for (Pixel spot1: pixels6)
+        {
+            red6 = spot1.getRed();
+            red6 = (int)(red6 + 50);
+            spot1.setRed(red6);
+            blue6 = spot1.getBlue();
+            blue6 = (int)(blue6 + 100);
+            spot1.setBlue(blue6);
+            green6 = spot1.getGreen();
+            green6 = (int)(green6 - 100);
+            spot1.setGreen(green6);
+        }
+        kitten6.explore();
+        
+        //colorify
+        int red7, blue7, green7;
+        Pixel[] pixels7 = kitten7.getPixels();
+        for (Pixel spot1: pixels7)
+        {
+            red7 = spot1.getRed();
+            blue7 = spot1.getBlue();
+            green7 = spot1.getGreen();
+            if ((50 < red7 && red7 < 125) && (115 < green7 && green7 < 175) && (160 < blue7 && blue7 < 255))
+            {
+                red7 = (int)(red7 + 50);
+                spot1.setRed(red7);
+                blue7 = (int)(blue7 + 5);
+                spot1.setBlue(blue7);
+                green7 = (int)(green7 + 5);
+                spot1.setGreen(green7); 
+            }
+        }
+        kitten7.explore();
     }
 }
