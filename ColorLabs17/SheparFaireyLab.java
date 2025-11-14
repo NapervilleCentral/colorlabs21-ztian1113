@@ -237,7 +237,7 @@ public class SheparFaireyLab
              }
          }
          me5.explore();
-         
+         me5.write("images/meFINAL.jpg");
          
          Picture me6= new Picture("images/megrey.jpg");
          Pixel[] pixels6 = me6.getPixels();
