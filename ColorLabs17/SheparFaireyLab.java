@@ -155,6 +155,7 @@ public class SheparFaireyLab
          
          Picture me4= new Picture("images/megrey.jpg");
          Pixel[] pixels4 = me4.getPixels();
+         //trial 2
          for (Pixel spot: pixels4)
          {
              red = spot.getRed();
@@ -193,5 +194,92 @@ public class SheparFaireyLab
              }
          }
          me4.explore();
+         
+         
+         Picture me5= new Picture("images/megrey.jpg");
+         Pixel[] pixels5 = me5.getPixels();
+         //trial 3 FINAL
+         for (Pixel spot: pixels5)
+         {
+             red = spot.getRed();
+             green = spot.getGreen();
+             blue = spot.getBlue();
+             grey = (red + green + blue)/3;
+             if (grey < 57)
+             {
+                 spot.setRed(50);
+                 spot.setGreen(19);
+                 spot.setBlue(37);
+             }
+             else if (grey < 115)
+             {
+                 spot.setRed(88);
+                 spot.setGreen(15);
+                 spot.setBlue(60);
+             }
+             else if (grey < 168)
+             {
+                 spot.setRed(174);
+                 spot.setGreen(29);
+                 spot.setBlue(55);
+             }
+             else if (grey < 209)
+             {
+                 spot.setRed(211);
+                 spot.setGreen(142);
+                 spot.setBlue(89);
+             }
+             else
+             {
+                 spot.setRed(255);
+                 spot.setGreen(246);
+                 spot.setBlue(208);
+             }
+         }
+         me5.explore();
+         
+         
+         Picture me6= new Picture("images/megrey.jpg");
+         Pixel[] pixels6 = me6.getPixels();
+         //trial 4
+         for (Pixel spot: pixels6)
+         {
+             red = spot.getRed();
+             green = spot.getGreen();
+             blue = spot.getBlue();
+             grey = (red + green + blue)/3;
+             if (grey < 57)
+             {
+                 spot.setRed(50);
+                 spot.setGreen(19);
+                 spot.setBlue(37);
+             }
+             else if (grey < 112)
+             {
+                 spot.setRed(88);
+                 spot.setGreen(15);
+                 spot.setBlue(60);
+             }
+             else if (grey < 165)
+             {
+                 spot.setRed(174);
+                 spot.setGreen(29);
+                 spot.setBlue(55);
+             }
+             else if (grey < 208)
+             {
+                 spot.setRed(211);
+                 spot.setGreen(142);
+                 spot.setBlue(89);
+             }
+             else
+             {
+                 spot.setRed(255);
+                 spot.setGreen(246);
+                 spot.setBlue(208);
+             }
+         }
+         me6.explore();
+         
     }     
 }
