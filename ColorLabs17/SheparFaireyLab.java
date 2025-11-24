@@ -68,6 +68,7 @@ public class SheparFaireyLab
              }
          }
          pic.explore();
+         pic.write("images/me1.jpg");
          
          
          /**/
@@ -106,6 +107,7 @@ public class SheparFaireyLab
              }
          }
          me2.explore();
+         me2.write("images/me2.jpg");
          /**/
          
          /**/
@@ -150,6 +152,7 @@ public class SheparFaireyLab
              }
          }
          me3.explore();
+         me3.write("images/me3.jpg");
          /**/
          
          
@@ -194,7 +197,7 @@ public class SheparFaireyLab
              }
          }
          me4.explore();
-         
+         me4.write("images/me4.jpg");
          
          Picture me5= new Picture("images/megrey.jpg");
          Pixel[] pixels5 = me5.getPixels();
@@ -237,7 +240,7 @@ public class SheparFaireyLab
              }
          }
          me5.explore();
-         me5.write("images/meFINAL.jpg");
+         me5.write("images/me5FINAL.jpg");
          
          Picture me6= new Picture("images/megrey.jpg");
          Pixel[] pixels6 = me6.getPixels();
@@ -280,6 +283,6 @@ public class SheparFaireyLab
              }
          }
          me6.explore();
-         
+         me6.write("images/me6.jpg");         
     }     
 }
