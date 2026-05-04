@@ -19,11 +19,11 @@ public class TestPicture17
   public static void main(String[] args)
   {
       //opens picture using a dialog box
-      /*
+      
      String fileName = FileChooser.pickAFile();
      Picture pictObj = new Picture(fileName);
      pictObj.explore();
-*/
+
      //opens a pictue using a path
      //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
      
@@ -147,5 +147,11 @@ final double  FACTOR = .5;
     ferris1.write("images/SFTry1.jpg");
 
     /**/
-  }//main
+    }//main
+  
+  
+  /**
+   * Method to mirror on a vertical line in the middle of the picture based on the width
+   */
+  
 }//class
