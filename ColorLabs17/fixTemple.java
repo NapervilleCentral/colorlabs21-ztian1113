@@ -20,16 +20,16 @@ public class fixTemple
      */
     public static void mirrorVertical(Picture source)
     {
-        int width = source.getWidth();
+        int width = 550;
         int mirrorPoint = width / 2;
         Pixel leftPixel = null;
         Pixel rightPixel = null;
         
         //loop through all the rows
-        for (int y = 0; y < source.getHeight(); y++)
+        for (int y = 0; y < 125; y++)
         {
             //loop from 0 to the middle
-            for (int x = 0; x < mirrorPoint; x++)
+            for (int x = 10; x < mirrorPoint; x++)
             {
                 leftPixel = source.getPixel(x, y);
                 rightPixel = source.getPixel(width - 1 - x, y);
