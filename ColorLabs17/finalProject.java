@@ -23,8 +23,10 @@ public class finalProject
         copytoCanvas(cats1, canvas, 0, 0);
         mirrorVertical(cats2);
         copytoCanvas(cats2, canvas, cats2.getWidth(), 0);
-        blackAndWhite(cats5);
-        copytoCanvas(cats5, canvas, 0, cats5.getHeight());
+        blackAndWhite(cats3);
+        copytoCanvas(cats3, canvas, 0, cats3.getHeight());
+        invert(cats4);
+        copytoCanvas(cats4, canvas, cats4.getWidth(), cats4.getHeight());
         canvas.explore();
     }
     
@@ -130,6 +132,22 @@ public class finalProject
             //spot.setBlue((blue1 + blue2) / 2);
         }
     }
+    
+    public static void recursion(Picture source, int width, int height)
+    {
+        Pixel[] pixels = source.getPixels();
+        if (width <= 100)
+            return;
+        else
+        {
+            for (Pixel spot: pixels)
+            {
+                return;
+            }
+        }
+    }
+    
+    
     
     /**
      * Method to copy one picture to another
