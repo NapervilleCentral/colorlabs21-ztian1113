@@ -18,7 +18,7 @@ public class finalProject
         Picture cats4 = new Picture("images/cats.jpg");
         Picture cats5 = new Picture("images/cats.jpg");
         Picture cats6 = new Picture("images/cats.jpg");
-        Picture heartHands = new Picture("images/heartHands.jpg");
+        Picture hearts = new Picture("images/hearts.jpg");
         Picture canvas = new Picture("images/canvas.jpg");
         copytoCanvas(cats1, canvas, 0, 0);
         mirrorVertical(cats2);
@@ -27,7 +27,14 @@ public class finalProject
         copytoCanvas(cats3, canvas, 0, cats3.getHeight());
         invert(cats4);
         copytoCanvas(cats4, canvas, cats4.getWidth(), cats4.getHeight());
+        overlay(cats5, hearts);
+        copytoCanvas(cats5, canvas, 0, cats5.getHeight() * 2); 
+        recursion(cats6, cats6, cats6.getWidth(), cats6.getHeight());
+        copytoCanvas(cats6, canvas, cats6.getWidth(), cats6.getHeight() * 2);
         canvas.explore();
+        
+        canvas.write("images/finalcollage.jpg");
+        //canvas.write(“images/finalcollage.jpg”);
     }
     
     /**
@@ -112,38 +119,48 @@ public class finalProject
     
     public static void overlay(Picture source1, Picture source2)
     {
-        int red1, green1, blue1, red2, green2, blue2;
-        Pixel[] pixels1 = source1.getPixels();
-        Pixel[] pixels2 = source2.getPixels();
+        int red, green, blue;
         
-        for (Pixel spot: pixels1)
+        for (int y = 0; y < source2.getHeight(); y++)
         {
-            red1 = spot.getRed();
-            green1 = spot.getGreen();
-            blue1 = spot.getBlue();
-        }
-        for (Pixel spot: pixels2)
-        {
-            red2 = spot.getRed();
-            green2 = spot.getGreen();
-            blue2 = spot.getBlue();
-            //spot.setRed((red1 + red2) / 2);
-            //spot.setGreen((green1 + green2) /2);
-            //spot.setBlue((blue1 + blue2) / 2);
+            for (int x = 0; x < source2.getWidth(); x++)
+            {
+                Pixel pixels1 = source1.getPixel(x, y);
+                Pixel pixels2 = source2.getPixel(x, y);
+                
+                red = (pixels1.getRed() + pixels2.getRed()) / 2;
+                green = (pixels1.getGreen() + pixels2.getGreen()) / 2;
+                blue = (pixels1.getBlue() + pixels2.getBlue()) / 2;
+                
+                pixels1.setRed(red);
+                pixels1.setGreen(green);
+                pixels1.setBlue(blue);
+            }
         }
     }
     
-    public static void recursion(Picture source, int width, int height)
+    public static void recursion(Picture source, Picture target, int width, int height)
     {
         Pixel[] pixels = source.getPixels();
         if (width <= 100)
             return;
         else
         {
-            for (Pixel spot: pixels)
+            for (int x = 0; x < width; x++)
             {
-                return;
+                for (int y = 0; y < height; y++)
+                {
+                    int sourceX = x * source.getWidth() / width;
+                    int sourceY = y * source.getHeight() / height;
+                    
+                    Pixel sourcePixel = source.getPixel(sourceX, sourceY);
+                    Pixel targetPixel = target.getPixel(x, y);
+                    
+                    targetPixel.setColor(sourcePixel.getColor());
+                }
             }
+            
+            recursion(source, target, width / 2, height / 2);
         }
     }
     
